@@ -1,0 +1,57 @@
+.top-add-form-modal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.top-add-form-modal .top-add-form-modal-title {
+  font-weight: bold;
+  color: rgb(138, 138, 189);
+}
+
+.add-form-icon {
+  cursor: pointer;
+}
+
+.add-form-icon:hover {
+  color: rgb(142, 142, 186);
+}
+
+.add-form .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: rgb(164, 111, 213);
+  font-size: 1.05rem;
+}
+
+.add-form .css-1eed5fa-MuiInputBase-root-MuiInput-root.Mui-focused::after {
+  border: 1px solid rgb(142, 142, 186);
+}
+
+.add-form
+  .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: rgb(164, 111, 213);
+}
+
+.css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root
+  .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
+  background-color: rgba(160, 130, 225, 0.08);
+}
+
+.css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root
+  .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected:hover {
+  background-color: rgba(96, 50, 195, 0.232);
+}
+
+.add-form .add-form-button {
+  border-radius: 0.5rem;
+  padding: 0.56434rem;
+  font-weight: bold;
+  background-color: rgb(237, 237, 237);
+  color: rgb(184, 184, 219);
+}
+
+.add-form .add-form-button:hover {
+  background-color: rgb(184, 184, 219);
+  color: rgb(255, 255, 255);
+}

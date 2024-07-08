@@ -1,0 +1,18 @@
+.box .navbar {
+  background-color: #81638b;
+  min-height: 80px;
+}
+
+.box .navbar .navbar-toolbar {
+  margin: auto 0;
+}
+
+.box .navbar .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 550;
+  letter-spacing: 0.05rem;
+}
+
+.box .navbar .navbar-toolbar-btn {
+  margin-right: 1rem;
+}

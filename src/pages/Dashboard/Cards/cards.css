@@ -1,0 +1,66 @@
+.grid-container {
+  display: flex;
+  justify-content: space-evenly;
+
+  align-items: center;
+  height: auto;
+  margin-top: 3rem !important;
+}
+
+.grid-container .grid-card {
+  height: auto;
+  box-shadow: 4px 4px 1px -1px rgba(182, 182, 182, 0.2);
+  border-radius: 6px;
+  background-color: rgb(249, 249, 250);
+  padding: 2.5rem;
+}
+
+.grid-container .grid-card:hover {
+  transition: all 500ms ease-in-out;
+  transform: translate(-0.15rem, -0.15rem);
+  box-shadow: 7px 7px 4px -4px rgba(97, 97, 97, 0.2);
+}
+
+.grid-container .grid-card .grid-card-title {
+  font-size: 2.3rem;
+  color: rgb(157, 126, 218);
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  cursor: default;
+}
+
+.grid-container .grid-card .grid-card-text {
+  font-size: 1rem;
+  color: rgb(73, 73, 73);
+  margin-bottom: 2rem;
+  cursor: default;
+}
+
+.grid-container .grid-card .grid-card-img {
+  border-radius: 4px;
+  filter: opacity(80%);
+}
+
+.grid-container .grid-card .grid-card-btn {
+  background-color: rgb(212, 199, 240);
+
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.grid-container .grid-card a .grid-card-btn {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.grid-container .grid-card a:visited .grid-card-btn {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border: none;
+}
+
+.grid-container .grid-card .grid-card-btn:hover {
+  background-color: rgb(188, 164, 240);
+}

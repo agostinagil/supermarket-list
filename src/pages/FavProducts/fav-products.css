@@ -1,0 +1,8 @@
+.grid-container {
+  display: flex;
+  justify-content: space-evenly;
+
+  align-items: center;
+  height: auto;
+  margin-top: 3rem !important;
+}

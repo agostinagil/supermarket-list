@@ -1,0 +1,78 @@
+.grid-container-category {
+  justify-content: center;
+}
+
+.grid-container-category .card-category {
+  min-height: 20rem;
+  height: auto;
+  width: 20rem;
+  box-shadow: 4px 4px 1px -1px rgba(182, 182, 182, 0.2);
+  border-radius: 6px;
+  background-color: rgb(249, 249, 250);
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.grid-container-category .card-title-category {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.grid-container-category .card-category .card-product-box {
+  margin-top: 0.6rem;
+}
+
+.card-category .card-product-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-category .card-product-box .card-product-delete-icon {
+  color: #e4717a;
+  cursor: pointer;
+}
+
+.card-category .card-product-box .card-product-delete-icon:hover {
+  color: #be6068;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 65px;
+  font-size: 0.8rem;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Posición del tooltip arriba del elemento */
+  left: 50%;
+  margin-left: -33px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Parte inferior del tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
