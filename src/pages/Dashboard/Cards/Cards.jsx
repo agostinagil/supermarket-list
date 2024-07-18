@@ -43,7 +43,7 @@ const Cards = () => {
           <Typography variant="body2" className="grid-card-text">
             Here you can find the list for your next purchase
           </Typography>
-          <a>
+          <a href="/shopping-cart">
             <Button className="grid-card-btn">Go!</Button>
           </a>
         </Card>

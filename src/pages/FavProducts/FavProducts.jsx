@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AddFavModal from "./AddFavModal/AddFavModal";
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, Box, Typography } from "@mui/material";
 import { useProductsContext } from "../../contexts/FavProducts";
 import CategoryCard from "./CategoryCards/CategoryCard";
 
@@ -15,8 +15,15 @@ const FavProducts = () => {
   const handleClose = () => setOpen(false);
   return (
     <>
-      <h1>Products</h1>
-      <Button onClick={handleOpen}>Add</Button>
+      <Box className="fav-products-top">
+        <h1>Favorite Products</h1>
+        <Typography className="fav-products-description">
+          Add the products that you realized are essential for your pantry
+        </Typography>
+        <Button onClick={handleOpen} className="add-button">
+          Add
+        </Button>
+      </Box>
       <AddFavModal
         open={open}
         onClose={handleClose}

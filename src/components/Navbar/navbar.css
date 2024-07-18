@@ -1,6 +1,7 @@
 .box .navbar {
-  background-color: #81638b;
+  background-color: #b39dbb;
   min-height: 80px;
+  box-shadow: none;
 }
 
 .box .navbar .navbar-toolbar {
@@ -15,4 +16,16 @@
 
 .box .navbar .navbar-toolbar-btn {
   margin-right: 1rem;
+}
+
+.box a {
+  text-decoration: none;
+}
+
+.box a:visited {
+  color: inherit;
+}
+
+.box .navbar-toolbar-btn:hover {
+  border-radius: 0.383rem;
 }

@@ -10,13 +10,15 @@
   border-radius: 6px;
   background-color: rgb(249, 249, 250);
   padding: 2rem;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 .grid-container-category .card-title-category {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 0.5rem;
+  color: #202124;
+  cursor: default;
 }
 
 .grid-container-category .card-category .card-product-box {
@@ -28,8 +30,31 @@
   justify-content: space-between;
 }
 
+.card-product-box .card-products {
+  color: #202124;
+  cursor: default;
+}
+
+.card-category .card-product-box .card-product-actions {
+  width: 4rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-category .card-product-box .card-product-actions .card-product-add-icon {
+  color: #ab8fb4;
+  cursor: pointer;
+}
+
+.card-category
+  .card-product-box
+  .card-product-actions
+  .card-product-add-icon:hover {
+  color: #8b7093;
+}
+
 .card-category .card-product-box .card-product-delete-icon {
-  color: #e4717a;
+  color: #f2939b;
   cursor: pointer;
 }
 

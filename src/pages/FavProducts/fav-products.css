@@ -6,3 +6,39 @@
   height: auto;
   margin-top: 3rem !important;
 }
+
+.fav-products-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fav-products-top h1 {
+  font-size: 3em;
+  margin-top: 1.8rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05rem;
+  color: #202124;
+}
+
+.fav-products-top .fav-products-description {
+  color: #202124;
+}
+
+.fav-products-top .add-button {
+  cursor: pointer;
+  border-radius: 0.383rem;
+  padding: 0.4rem;
+  width: 8rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ab8fb4;
+  border: thin solid #9f9f9f;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.fav-products-top .add-button:hover {
+  background-color: #ddcae3;
+  color: #fefefe;
+}

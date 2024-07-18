@@ -35,7 +35,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const login = ({ username, password }) => {
-    console.log("Login attempt:", { username, password });
     if (username === "admin" && password === "1234") {
       const { jwt } = {
         ok: true,

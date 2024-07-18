@@ -10,6 +10,7 @@ import {
   Typography,
   OutlinedInput,
   Box,
+  FormHelperText,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -59,6 +60,7 @@ const AddFavModal = ({ open, onClose }) => {
   ];
 
   const [category, setCategory] = useState("");
+  const [errors, setErrors] = useState({ product: "", category: "" });
   const { dispatch } = useProductsContext();
 
   const handleChange = (e) => {
@@ -70,9 +72,25 @@ const AddFavModal = ({ open, onClose }) => {
     const formData = new FormData(e.target);
     const product = formData.get("product");
     const category = formData.get("category");
+    const tempErrors = {};
 
-    dispatch({ type: ADD_FAV, payload: { product, category } });
-    e.target.reset();
+    if (!product) {
+      tempErrors.product = "Fill out this field";
+    }
+
+    if (!category) {
+      tempErrors.category = "Choose one category";
+    }
+
+    setErrors(tempErrors);
+
+    if (Object.keys(tempErrors).length === 0) {
+      dispatch({
+        type: ADD_FAV,
+        payload: { product, category },
+      });
+      e.target.reset();
+    }
   };
 
   return (
@@ -112,9 +130,12 @@ const AddFavModal = ({ open, onClose }) => {
               id="product"
               name="product"
               type="text"
-              required
               className="add-form-input"
+              error={!!errors.product}
             />
+            {errors.product && (
+              <FormHelperText error>{errors.product}</FormHelperText>
+            )}
           </FormControl>
           <FormControl fullWidth sx={{ marginY: 3 }}>
             <InputLabel id="category">Category</InputLabel>
@@ -133,6 +154,9 @@ const AddFavModal = ({ open, onClose }) => {
                 </MenuItem>
               ))}
             </Select>
+            {errors.category && (
+              <FormHelperText error>{errors.category}</FormHelperText>
+            )}
           </FormControl>
           <Button
             type="submit"

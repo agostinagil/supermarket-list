@@ -19,6 +19,8 @@ export const FavProdsProvider = ({ children }) => {
     }
 
     acc[category].push(prodName);
+
+    // acc[category].push(prodName);
     return acc;
   }, {});
 

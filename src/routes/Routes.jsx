@@ -5,6 +5,7 @@ import Home from "../pages/Home/Home";
 import Navbar from "../components/Navbar/Navbar";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import FavProducts from "../pages/FavProducts/FavProducts";
+import ShoppingCart from "../pages/ShoppingCart/ShoppingCart";
 
 const AppRoutes = () => {
   return (
@@ -25,6 +26,14 @@ const AppRoutes = () => {
           element={
             <PrivateRoute>
               <FavProducts />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/shopping-cart"
+          element={
+            <PrivateRoute>
+              <ShoppingCart />
             </PrivateRoute>
           }
         />

@@ -27,6 +27,7 @@ export const favProductsReducer = (state, action) => {
         favProducts: updatedProducts,
       };
     }
+
     default:
       return state;
   }

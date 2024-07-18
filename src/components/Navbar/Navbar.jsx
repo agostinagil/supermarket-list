@@ -25,14 +25,20 @@ export default function Navbar() {
           >
             Supermarkt
           </Typography>
-          <Button color="inherit" className="navbar-toolbar-btn">
-            About
-          </Button>
 
           {isLoggedIn() ? (
             <>
               <Button color="inherit" className="navbar-toolbar-btn">
                 How to use
+              </Button>
+              <Button color="inherit" className="navbar-toolbar-btn">
+                <a href="/dashboard">Dashboard</a>
+              </Button>
+              <Button color="inherit" className="navbar-toolbar-btn">
+                <a href="/fav-products">Favorite Products</a>
+              </Button>
+              <Button color="inherit" className="navbar-toolbar-btn">
+                <a href="/shopping-cart">Shopping Cart</a>
               </Button>
               <Button
                 color="inherit"

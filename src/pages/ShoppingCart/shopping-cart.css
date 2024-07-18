@@ -1,0 +1,17 @@
+.shopping-cart-page .shopping-card {
+  width: 50rem;
+  height: auto;
+  border-radius: 6px;
+  margin: 4rem auto;
+  box-shadow: 4px 4px 1px -1px rgba(182, 182, 182, 0.2);
+  padding: 2.5rem;
+  background-color: rgb(249, 249, 250);
+}
+
+.shopping-card .shopping-card-title {
+  font-size: 2.3rem;
+  text-align: center;
+  font-weight: bold;
+  color: #83688e;
+  margin-bottom: 1rem;
+}
