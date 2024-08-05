@@ -1,0 +1,89 @@
+@import url("../../../App.css");
+
+.base-MenuButton-root {
+  font-family: inherit;
+  line-height: 1.5;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: var(--second-color);
+  transition: all 150ms ease;
+  cursor: pointer;
+  border: 0.5px solid;
+  height: 40px;
+  width: 40px;
+}
+
+.base-MenuButton-root:hover {
+  background-color: var(--second-color);
+  color: var(--primary-color);
+}
+
+.base-Menu-root {
+  background-color: var(--second-color);
+  width: 100%;
+  margin-top: 16px;
+}
+
+.base-Menu-root .base-Menu-listbox {
+  padding-left: 0;
+}
+
+.base-Menu-root .base-MenuItem-root {
+  list-style: none;
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 3rem;
+}
+
+.base-Menu-root .base-MenuItem-root:hover {
+  width: 100%;
+  background-color: var(--smoke-color);
+}
+
+.menu-dropdown-link {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding-left: 1rem;
+  text-decoration: none;
+  padding-top: 0.55rem;
+  color: var(--text-white-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.01s ease;
+}
+
+.menu-dropdown-link:hover {
+  color: var(--icon-hover-color);
+}
+
+.menuD-btn .menu-dropdown-logout {
+  color: var(--smoke-color);
+  background-color: var(--bg-button-color);
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  padding: 0 1rem;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.menuD-btn .menu-dropdown-logout:hover {
+  background-color: var(--bg-button-hover-color);
+}
+
+.menu-icon {
+  color: var(--smoke-color);
+  margin-top: 0.3rem;
+}
+
+@media screen and (min-width: 240px) {
+  .base-MenuButton-root {
+    width: auto;
+    height: auto;
+  }
+
+  .menu-icon {
+    margin-top: 5px;
+  }
+}

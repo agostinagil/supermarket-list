@@ -1,5 +1,42 @@
+@import url("../../../App.css");
+
 .form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.form .login-inputs > * {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.form .MuiInputBase-root {
+  color: var(--text-black-color);
+}
+
+.form .login-form-btn {
+  background-color: var(--bg-button-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form .login-form-btn:hover {
+  background-color: var(--bg-button-hover-color);
+}
+
+.form .MuiInputBase-root {
+  border-bottom: 0.8px solid var(--grey-color);
+}
+
+.form .MuiInputBase-root::before {
+  border-bottom: none;
+}
+
+.form .MuiInputBase-root::after {
+  border-bottom: 1px solid var(--title-primary-color);
+}
+
+.login-error-msg {
+  color: var(--warning-dark-color);
 }

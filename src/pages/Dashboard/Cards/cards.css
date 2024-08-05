@@ -1,18 +1,23 @@
+@import url("../../../App.css");
+
 .grid-container {
   display: flex;
-  justify-content: space-evenly;
-
+  justify-content: center;
   align-items: center;
   height: auto;
   margin-top: 3rem !important;
 }
 
 .grid-container .grid-card {
-  height: auto;
+  min-height: 537px;
+  max-width: 400px;
   box-shadow: 4px 4px 1px -1px rgba(182, 182, 182, 0.2);
   border-radius: 6px;
-  background-color: rgb(249, 249, 250);
+  background-color: var(--smoke-color);
   padding: 2.5rem;
+  margin-bottom: 3rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .grid-container .grid-card:hover {
@@ -23,7 +28,7 @@
 
 .grid-container .grid-card .grid-card-title {
   font-size: 2.3rem;
-  color: rgb(157, 126, 218);
+  color: var(--title-primary-color);
   font-weight: bold;
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -32,7 +37,7 @@
 
 .grid-container .grid-card .grid-card-text {
   font-size: 1rem;
-  color: rgb(73, 73, 73);
+  color: rgb(73, 73, 73) var(--text-black-color);
   margin-bottom: 2rem;
   cursor: default;
 }
@@ -43,7 +48,7 @@
 }
 
 .grid-container .grid-card .grid-card-btn {
-  background-color: rgb(212, 199, 240);
+  background-color: var(--bg-button-color);
 
   width: 100%;
   font-size: 1rem;
@@ -51,16 +56,16 @@
 }
 
 .grid-container .grid-card a .grid-card-btn {
-  color: rgb(255, 255, 255);
+  color: var(--smoke-color);
   text-decoration: none;
 }
 
 .grid-container .grid-card a:visited .grid-card-btn {
-  color: rgb(255, 255, 255);
+  color: var(--smoke-color);
   text-decoration: none;
   border: none;
 }
 
 .grid-container .grid-card .grid-card-btn:hover {
-  background-color: rgb(188, 164, 240);
+  background-color: var(--bg-button-hover-color);
 }

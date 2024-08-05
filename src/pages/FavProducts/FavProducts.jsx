@@ -18,7 +18,7 @@ const FavProducts = () => {
       <Box className="fav-products-top">
         <h1>Favorite Products</h1>
         <Typography className="fav-products-description">
-          Add the products that you realized are essential for your pantry
+          Add the products that you consider are essential for your pantry
         </Typography>
         <Button onClick={handleOpen} className="add-button">
           Add

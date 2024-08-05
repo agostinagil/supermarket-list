@@ -1,3 +1,14 @@
+@import url("../../../App.css");
+
+.modal .MuiBox-root {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.top-add-form-modal {
+  padding: 0;
+}
+
 .top-add-form-modal {
   display: flex;
   justify-content: space-between;
@@ -7,51 +18,63 @@
 
 .top-add-form-modal .top-add-form-modal-title {
   font-weight: bold;
-  color: rgb(138, 138, 189);
+  color: var(--second-color);
 }
 
-.add-form-icon {
+.top-add-form-modal .close-form-icon {
   cursor: pointer;
 }
 
-.add-form-icon:hover {
-  color: rgb(142, 142, 186);
+.top-add-form-modal .close-form-icon:hover {
+  color: var(--primary-color);
 }
 
 .add-form .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
-  color: rgb(164, 111, 213);
+  color: var(--title-primary-color);
   font-size: 1.05rem;
 }
 
 .add-form .css-1eed5fa-MuiInputBase-root-MuiInput-root.Mui-focused::after {
-  border: 1px solid rgb(142, 142, 186);
+  border: 1px solid var(--second-color);
 }
 
 .add-form
   .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
   .MuiOutlinedInput-notchedOutline {
-  border-color: rgb(164, 111, 213);
+  border-color: var(--second-color);
 }
 
 .css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root
   .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
-  background-color: rgba(160, 130, 225, 0.08);
+  background-color: var(--text-black-color);
 }
 
 .css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root
   .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected:hover {
-  background-color: rgba(96, 50, 195, 0.232);
+  background-color: var(--text-black-color);
 }
 
 .add-form .add-form-button {
   border-radius: 0.5rem;
   padding: 0.56434rem;
   font-weight: bold;
-  background-color: rgb(237, 237, 237);
-  color: rgb(184, 184, 219);
+  background-color: var(--bg-button-color);
+  color: var(--smoke-color);
 }
 
 .add-form .add-form-button:hover {
-  background-color: rgb(184, 184, 219);
-  color: rgb(255, 255, 255);
+  background-color: var(--bg-button-hover-color);
+}
+
+@media screen and (min-width: 320) {
+  .modal .MuiBox-root {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .modal .MuiBox-root {
+    max-width: 380px;
+  }
 }

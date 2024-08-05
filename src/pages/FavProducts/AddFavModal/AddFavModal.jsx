@@ -94,80 +94,83 @@ const AddFavModal = ({ open, onClose }) => {
   };
 
   return (
-    <Modal
-      open={open}
-      onClose={onClose}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
-      sx={{
-        boxShadow: "none",
-        border: "none",
-      }}
-    >
-      <Box sx={style}>
-        <Box className="top-add-form-modal">
-          <Typography
-            id="modal-modal-title"
-            variant="h6"
-            component="h2"
-            className="top-add-form-modal-title"
-          >
-            Add your favorite products
-          </Typography>
-          <CloseIcon className="add-form-icon" onClick={onClose} />
-        </Box>
-
-        <form onSubmit={handleProduct} className="add-form">
-          <FormControl
-            sx={{ marginY: 3 }}
-            fullWidth
-            className="add-form-form-control"
-          >
-            <InputLabel htmlFor="product" className="add-form-input-label">
-              Products name
-            </InputLabel>
-            <Input
-              id="product"
-              name="product"
-              type="text"
-              className="add-form-input"
-              error={!!errors.product}
-            />
-            {errors.product && (
-              <FormHelperText error>{errors.product}</FormHelperText>
-            )}
-          </FormControl>
-          <FormControl fullWidth sx={{ marginY: 3 }}>
-            <InputLabel id="category">Category</InputLabel>
-            <Select
-              id="category"
-              name="category"
-              label="Category"
-              value={category}
-              onChange={handleChange}
-              MenuProps={MenuProps}
-              input={<OutlinedInput label="Category" />}
+    <div className="modal">
+      <Modal
+        open={open}
+        onClose={onClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        sx={{
+          boxShadow: "none",
+          border: "none",
+        }}
+        className="modal"
+      >
+        <Box sx={style}>
+          <Box className="top-add-form-modal">
+            <Typography
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              className="top-add-form-modal-title"
             >
-              {categories.map((category, i) => (
-                <MenuItem key={i} value={category}>
-                  {category}
-                </MenuItem>
-              ))}
-            </Select>
-            {errors.category && (
-              <FormHelperText error>{errors.category}</FormHelperText>
-            )}
-          </FormControl>
-          <Button
-            type="submit"
-            sx={{ marginTop: 2 }}
-            className="add-form-button"
-          >
-            Add product
-          </Button>
-        </form>
-      </Box>
-    </Modal>
+              Add your favorite products
+            </Typography>
+            <CloseIcon className="close-form-icon" onClick={onClose} />
+          </Box>
+
+          <form onSubmit={handleProduct} className="add-form">
+            <FormControl
+              sx={{ marginY: 3 }}
+              fullWidth
+              className="add-form-form-control"
+            >
+              <InputLabel htmlFor="product" className="add-form-input-label">
+                Products name
+              </InputLabel>
+              <Input
+                id="product"
+                name="product"
+                type="text"
+                className="add-form-input"
+                error={!!errors.product}
+              />
+              {errors.product && (
+                <FormHelperText error>{errors.product}</FormHelperText>
+              )}
+            </FormControl>
+            <FormControl fullWidth sx={{ marginY: 3 }}>
+              <InputLabel id="category">Category</InputLabel>
+              <Select
+                id="category"
+                name="category"
+                label="Category"
+                value={category}
+                onChange={handleChange}
+                MenuProps={MenuProps}
+                input={<OutlinedInput label="Category" />}
+              >
+                {categories.map((category, i) => (
+                  <MenuItem key={i} value={category}>
+                    {category}
+                  </MenuItem>
+                ))}
+              </Select>
+              {errors.category && (
+                <FormHelperText error>{errors.category}</FormHelperText>
+              )}
+            </FormControl>
+            <Button
+              type="submit"
+              sx={{ marginTop: 2 }}
+              className="add-form-button"
+            >
+              Add product
+            </Button>
+          </form>
+        </Box>
+      </Modal>
+    </div>
   );
 };
 

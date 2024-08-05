@@ -1,3 +1,5 @@
+@import url("../../../App.css");
+
 .grid-container-category {
   justify-content: center;
 }
@@ -8,7 +10,7 @@
   width: 20rem;
   box-shadow: 4px 4px 1px -1px rgba(182, 182, 182, 0.2);
   border-radius: 6px;
-  background-color: rgb(249, 249, 250);
+  background-color: var(--smoke-color);
   padding: 2rem;
   margin: 1rem 0;
 }
@@ -17,12 +19,12 @@
   font-size: 2rem;
   text-align: center;
   margin-bottom: 0.5rem;
-  color: #202124;
+  color: var(--title-black-color);
   cursor: default;
 }
 
 .grid-container-category .card-category .card-product-box {
-  margin-top: 0.6rem;
+  margin-top: 1rem;
 }
 
 .card-category .card-product-box {
@@ -31,35 +33,41 @@
 }
 
 .card-product-box .card-products {
-  color: #202124;
+  color: var(--text-black-color);
   cursor: default;
+  width: 58%;
 }
 
 .card-category .card-product-box .card-product-actions {
   width: 4rem;
   display: flex;
   justify-content: space-around;
+  width: 42%;
 }
 
 .card-category .card-product-box .card-product-actions .card-product-add-icon {
-  color: #ab8fb4;
+  color: var(--icon-color);
   cursor: pointer;
+}
+
+.card-category .card-product-box .card-product-actions .checked-icon {
+  color: var(--text-black-color);
 }
 
 .card-category
   .card-product-box
   .card-product-actions
   .card-product-add-icon:hover {
-  color: #8b7093;
+  color: var(--icon-hover-color);
 }
 
 .card-category .card-product-box .card-product-delete-icon {
-  color: #f2939b;
+  color: var(--warning-light-color);
   cursor: pointer;
 }
 
 .card-category .card-product-box .card-product-delete-icon:hover {
-  color: #be6068;
+  color: var(--warning-dark-color);
 }
 
 .tooltip {
@@ -72,8 +80,8 @@
   visibility: hidden;
   width: 65px;
   font-size: 0.8rem;
-  background-color: #555;
-  color: #fff;
+  background-color: var(--tooltip-bg-color);
+  color: var(--smoke-color);
   text-align: center;
   border-radius: 6px;
   padding: 0.5px 0;
@@ -94,7 +102,7 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: var(--tooltip-bg-color) transparent transparent transparent;
 }
 
 .tooltip:hover .tooltiptext {

@@ -1,17 +1,68 @@
+@import url("../../App.css");
+
+.shopping-cart-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .shopping-cart-page .shopping-card {
-  width: 50rem;
+  /* width: 14rem; */
+  max-width: 40rem;
+  flex: 1;
   height: auto;
   border-radius: 6px;
-  margin: 4rem auto;
+  margin: 8rem 2rem;
   box-shadow: 4px 4px 1px -1px rgba(182, 182, 182, 0.2);
   padding: 2.5rem;
-  background-color: rgb(249, 249, 250);
+  background-color: var(--smoke-color);
 }
 
 .shopping-card .shopping-card-title {
   font-size: 2.3rem;
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
   text-align: center;
   font-weight: bold;
-  color: #83688e;
+  color: var(--title-primary-color);
   margin-bottom: 1rem;
+  cursor: default;
 }
+
+.shopping-item {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.8rem;
+  color: var(--text-black-color);
+  cursor: default;
+}
+
+.shopping-item > li {
+  text-align: start;
+}
+
+.shopping-check-icon {
+  cursor: pointer;
+  color: var(--success-color);
+}
+
+.shopping-delete-icon {
+  cursor: pointer;
+  color: var(--warning-dark-color);
+}
+
+.checked {
+  text-decoration: line-through;
+  color: var(--grey-color);
+}
+
+/* @media screen and (min-width: 380px) {
+  .shopping-cart-page .shopping-card {
+    width: 20rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .shopping-cart-page .shopping-card {
+    width: 40rem;
+  }
+} */

@@ -4,6 +4,8 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import LoginForm from "./LoginForm/LoginForm";
 
+import "./login.css";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -18,15 +20,21 @@ const style = {
 
 export default function LoginModal({ open, onClose }) {
   return (
-    <div>
+    <div className="login-modal">
       <Modal
+        className="modal"
         open={open}
         onClose={onClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" mb={3} component="h2">
+        <Box sx={style} className="box-login">
+          <Typography
+            id="modal-modal-title"
+            className="login-title"
+            variant="h6"
+            component="h2"
+          >
             Login
           </Typography>
           <LoginForm onClose={onClose} />

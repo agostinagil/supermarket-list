@@ -1,31 +1,76 @@
+@import url("../../App.css");
+
 .box .navbar {
-  background-color: #b39dbb;
+  background-color: var(--primary-color);
   min-height: 80px;
   box-shadow: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
 }
-
 .box .navbar .navbar-toolbar {
   margin: auto 0;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-
 .box .navbar .navbar-brand {
-  font-size: 1.5rem;
-  font-weight: 550;
+  font-size: 1.5em;
+  font-weight: bold;
   letter-spacing: 0.05rem;
-}
-
-.box .navbar .navbar-toolbar-btn {
+  font-family: inherit;
+  cursor: default;
   margin-right: 1rem;
 }
 
-.box a {
+.box .navbar .navbar-links {
+  margin-right: 0.5rem;
+}
+.navbar-links .nav-link {
+  color: var(--smoke-color);
+  text-decoration: none;
+}
+.navbar-links .nav-link:visited {
   text-decoration: none;
 }
 
-.box a:visited {
-  color: inherit;
+.navbar-links .nav-link.active {
+  font-weight: bold;
 }
 
-.box .navbar-toolbar-btn:hover {
-  border-radius: 0.383rem;
+.navbar-links .nav-link.active::after {
+  content: "";
+  height: 1.5px;
+  background: var(--icon-color);
+  display: block;
+  margin-top: 0.2px;
+}
+.box .navbar .login-btn {
+  color: var(--smoke-color);
+}
+
+@media screen and (min-width: 320px) {
+  .box .navbar .navbar-brand {
+    font-size: 2em;
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .box .navbar .navbar-toolbar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .box .navbar .navbar-toolbar {
+    margin: auto 0;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .box .navbar .navbar-brand {
+    margin-right: 0;
+  }
+
+  .box .navbar .navbar-links {
+    margin-right: 1rem;
+  }
 }

@@ -28,7 +28,12 @@ const CategoryCard = ({ category, groupedProducts }) => {
                 {product}
               </Typography>
               <Box className="card-product-actions">
-                {productIsInCart(product) && <CheckIcon />}
+                {productIsInCart(product) && (
+                  <div className="tooltip">
+                    <CheckIcon className="checked-icon" />
+                    <span className="tooltiptext">Added to cart</span>
+                  </div>
+                )}
                 <div className="tooltip">
                   <ShoppingCartIcon
                     className="card-product-add-icon"

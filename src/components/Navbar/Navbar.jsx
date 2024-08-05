@@ -1,9 +1,19 @@
-import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  Typography,
+  Button,
+  useMediaQuery,
+} from "@mui/material";
+import { NavLink } from "react-router-dom";
+
 import LoginModal from "../Login/Login";
 import { useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 
 import "./navbar.css";
+import DropdownNav from "./Dropdown/Dropdown";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -12,6 +22,8 @@ export default function Navbar() {
   const handleClose = () => setOpen(false);
 
   const { isLoggedIn, logout } = useAuth();
+
+  const isDesktop = useMediaQuery("(min-width:900px)");
 
   return (
     <Box sx={{ flexGrow: 1 }} className="box">
@@ -28,28 +40,36 @@ export default function Navbar() {
 
           {isLoggedIn() ? (
             <>
-              <Button color="inherit" className="navbar-toolbar-btn">
-                How to use
-              </Button>
-              <Button color="inherit" className="navbar-toolbar-btn">
-                <a href="/dashboard">Dashboard</a>
-              </Button>
-              <Button color="inherit" className="navbar-toolbar-btn">
-                <a href="/fav-products">Favorite Products</a>
-              </Button>
-              <Button color="inherit" className="navbar-toolbar-btn">
-                <a href="/shopping-cart">Shopping Cart</a>
-              </Button>
-              <Button
-                color="inherit"
-                onClick={logout}
-                className="navbar-toolbar-btn"
-              >
-                Logout
-              </Button>
+              {!isDesktop && <DropdownNav />}
+              {/* <DropdownNav /> */}
+              {isDesktop && (
+                <>
+                  <Button color="inherit" className="navbar-links">
+                    How to use
+                  </Button>
+                  <Button className="navbar-links">
+                    <NavLink to="/dashboard" className="nav-link">
+                      Dashboard
+                    </NavLink>
+                  </Button>
+                  <Button className="navbar-links">
+                    <NavLink to="/fav-products" className="nav-link">
+                      Favorite Products
+                    </NavLink>
+                  </Button>
+                  <Button className="navbar-links">
+                    <NavLink to="/shopping-cart" className="nav-link">
+                      Shopping Cart
+                    </NavLink>
+                  </Button>
+                  <Button onClick={logout} className="login-btn">
+                    Logout
+                  </Button>
+                </>
+              )}
             </>
           ) : (
-            <Button color="inherit" onClick={handleOpen}>
+            <Button onClick={handleOpen} className="login-btn">
               Login
             </Button>
           )}

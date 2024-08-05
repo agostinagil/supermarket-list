@@ -6,9 +6,9 @@ import "./cards.css";
 
 const Cards = () => {
   return (
-    <Grid container spacing={2} className="grid-container">
-      <Grid xs={4}>
-        <Card sx={{ minWidth: 275 }} className="grid-card">
+    <Grid container className="grid-container">
+      <Grid xs={10} sm={8} md={6} spacing={8}>
+        <Card sx={{ minWidth: 200, minHeight: 455 }} className="grid-card">
           <CardMedia
             component="img"
             height="194"
@@ -28,7 +28,7 @@ const Cards = () => {
           </a>
         </Card>
       </Grid>
-      <Grid xs={4}>
+      <Grid xs={10} sm={8} md={6} spacing={4}>
         <Card sx={{ minWidth: 275 }} className="grid-card">
           <CardMedia
             component="img"
