@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --primary-color: #b39dbb;
   --second-color: #ddcae3;
   --grey-color: #b4b3b3;
@@ -15,23 +15,33 @@
   --title-primary-color: #83698d;
   --title-black-color: #333333;
   --tooltip-bg-color: #555;
-}
+} */
 
 :root {
   --primary-color: #475e8c;
-  --second-color: #34c59c;
-  --grey-color: #b4b3b3;
-  --smoke-color: #f9f9fa;
+  --second-color: #5ab0a2;
+  --grey-color: #cbcbcb;
+  --smoke-color: #fdfdfd;
   --success-color: #81bb81;
   --warning-light-color: #f2939b;
   --warning-dark-color: #be6068;
+  --drowpdown-bg-color: rgba(38, 53, 84, 0.965);
+  --dropdown-link-hover-color: #eaeaead8;
   --bg-button-color: #a1b2d5;
-  --bg-button-hover-color: #425a8c;
+  --bg-button-hover-color: #344d85;
   --icon-color: #6fac9b;
   --icon-hover-color: #37967b;
   --text-black-color: #2e2e2e;
   --text-white-color: #ffffff;
   --title-primary-color: #445475;
-  --title-black-color: #333333;
+  --title-black-color: #363636;
   --tooltip-bg-color: #555;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
 }

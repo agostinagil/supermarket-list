@@ -1,0 +1,74 @@
+@import url("../../../../App.css");
+
+.sliderWrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: var(--icon-color);
+  width: 1rem;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navButton:hover {
+  color: var(--icon-hover-color);
+}
+
+.navButton:first-child {
+  left: 10px; /* Botón izquierdo */
+}
+
+.navButton:last-child {
+  right: 11px; /* Botón derecho */
+}
+
+.navButton > .arrowIcon {
+  width: 1.8em;
+  height: 1.8em;
+}
+
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-direction: row; /* Asegúrate de que sea una fila */
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Corrige la clase del punto activo */
+.dot.active {
+  background-color: #717171;
+}

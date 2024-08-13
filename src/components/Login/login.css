@@ -5,10 +5,21 @@
     0px 10px 14px 1px rgba(0, 0, 0, 0.14), -8px -6px 9px 0px rgba(0, 0, 0, 0.12);
 }
 
+.box-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 .box-login .login-title {
   font-weight: bold;
   color: var(--title-primary-color);
   font-size: 1.5rem;
   text-align: center;
   cursor: default;
+}
+
+.close-form-icon {
+  cursor: pointer;
 }

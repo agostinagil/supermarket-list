@@ -1,5 +1,12 @@
 @import url("../../App.css");
 
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  scroll-behavior: smooth;
+}
+
 .box .navbar {
   background-color: var(--primary-color);
   min-height: 80px;
@@ -29,6 +36,7 @@
   color: var(--smoke-color);
   text-decoration: none;
 }
+
 .navbar-links .nav-link:visited {
   text-decoration: none;
 }
@@ -44,6 +52,7 @@
   display: block;
   margin-top: 0.2px;
 }
+
 .box .navbar .login-btn {
   color: var(--smoke-color);
 }

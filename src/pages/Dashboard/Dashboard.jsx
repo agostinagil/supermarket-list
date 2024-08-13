@@ -8,12 +8,14 @@ const Dashboard = () => {
   const { name } = getUserInfo();
   return (
     <>
-      {name ? (
-        <h1 className="welcome-text">Welcome {name} 🥳</h1>
-      ) : (
-        <h4>Error obteniendo la información del usuario</h4>
-      )}
-      <Cards />
+      <div className="dashboard">
+        {name ? (
+          <h1 className="welcome-text">Welcome {name} 🥳</h1>
+        ) : (
+          <h4>Error obteniendo la información del usuario</h4>
+        )}
+        <Cards />
+      </div>
     </>
   );
 };

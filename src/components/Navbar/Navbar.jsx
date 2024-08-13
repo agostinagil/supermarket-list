@@ -6,7 +6,6 @@ import {
   Button,
   useMediaQuery,
 } from "@mui/material";
-import { NavLink } from "react-router-dom";
 
 import LoginModal from "../Login/Login";
 import { useState } from "react";
@@ -14,6 +13,7 @@ import { useAuth } from "../../contexts/AuthContext";
 
 import "./navbar.css";
 import DropdownNav from "./Dropdown/Dropdown";
+import NavDesktop from "./NavDesktop/NavDesktop";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -25,6 +25,18 @@ export default function Navbar() {
 
   const isDesktop = useMediaQuery("(min-width:900px)");
 
+  const loggedInLinks = [
+    { title: "Dashboard", path: "/dashboard", isAnchor: false },
+    { title: "Favorite Products", path: "/fav-products", isAnchor: false },
+    { title: "Shopping Cart", path: "/shopping-cart", isAnchor: false },
+  ];
+
+  const loggedOutLinks = [
+    { title: "About", path: "#about", isAnchor: true },
+    { title: "Features", path: "#features", isAnchor: true },
+    { title: "Testimonials", path: "#testimonials", isAnchor: true },
+  ];
+
   return (
     <Box sx={{ flexGrow: 1 }} className="box">
       <AppBar position="static" className="navbar">
@@ -35,33 +47,24 @@ export default function Navbar() {
             sx={{ flexGrow: 1 }}
             className="navbar-brand"
           >
-            Supermarkt
+            <a href="/" className="logo-link">
+              Supermarkt
+            </a>
           </Typography>
 
           {isLoggedIn() ? (
             <>
-              {!isDesktop && <DropdownNav />}
-              {/* <DropdownNav /> */}
+              {!isDesktop && (
+                <DropdownNav
+                  links={loggedInLinks}
+                  button="Logout"
+                  actionButton={logout}
+                />
+              )}
+
               {isDesktop && (
                 <>
-                  <Button color="inherit" className="navbar-links">
-                    How to use
-                  </Button>
-                  <Button className="navbar-links">
-                    <NavLink to="/dashboard" className="nav-link">
-                      Dashboard
-                    </NavLink>
-                  </Button>
-                  <Button className="navbar-links">
-                    <NavLink to="/fav-products" className="nav-link">
-                      Favorite Products
-                    </NavLink>
-                  </Button>
-                  <Button className="navbar-links">
-                    <NavLink to="/shopping-cart" className="nav-link">
-                      Shopping Cart
-                    </NavLink>
-                  </Button>
+                  <NavDesktop links={loggedInLinks} />
                   <Button onClick={logout} className="login-btn">
                     Logout
                   </Button>
@@ -69,9 +72,23 @@ export default function Navbar() {
               )}
             </>
           ) : (
-            <Button onClick={handleOpen} className="login-btn">
-              Login
-            </Button>
+            <>
+              {!isDesktop && (
+                <DropdownNav
+                  links={loggedOutLinks}
+                  button="Login"
+                  actionButton={handleOpen}
+                />
+              )}
+              {isDesktop && (
+                <>
+                  <NavDesktop links={loggedOutLinks} />
+                  <Button onClick={handleOpen} className="login-btn">
+                    Login
+                  </Button>
+                </>
+              )}
+            </>
           )}
         </Toolbar>
         <LoginModal open={open} onClose={handleClose} />

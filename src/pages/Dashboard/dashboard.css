@@ -1,7 +1,11 @@
 @import url("../../App.css");
 
+.dashboard {
+  margin-top: 120px;
+}
+
 .welcome-text {
   color: var(--title-black-color);
   text-align: center;
-  margin-top: 2.5rem;
+  font-size: 34px;
 }

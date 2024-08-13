@@ -8,7 +8,7 @@ const Cards = () => {
   return (
     <Grid container className="grid-container">
       <Grid xs={10} sm={8} md={6} spacing={8}>
-        <Card sx={{ minWidth: 200, minHeight: 455 }} className="grid-card">
+        <Card className="grid-card">
           <CardMedia
             component="img"
             height="194"
@@ -29,7 +29,7 @@ const Cards = () => {
         </Card>
       </Grid>
       <Grid xs={10} sm={8} md={6} spacing={4}>
-        <Card sx={{ minWidth: 275 }} className="grid-card">
+        <Card className="grid-card">
           <CardMedia
             component="img"
             height="194"

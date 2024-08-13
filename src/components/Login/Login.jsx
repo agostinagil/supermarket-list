@@ -2,6 +2,8 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import CloseIcon from "@mui/icons-material/Close";
+
 import LoginForm from "./LoginForm/LoginForm";
 
 import "./login.css";
@@ -28,15 +30,18 @@ export default function LoginModal({ open, onClose }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} className="box-login">
-          <Typography
-            id="modal-modal-title"
-            className="login-title"
-            variant="h6"
-            component="h2"
-          >
-            Login
-          </Typography>
+        <Box sx={style}>
+          <Box className="box-login">
+            <Typography
+              id="modal-modal-title"
+              className="login-title"
+              variant="h6"
+              component="h2"
+            >
+              Login
+            </Typography>
+            <CloseIcon className="close-form-icon" onClick={onClose} />
+          </Box>
           <LoginForm onClose={onClose} />
         </Box>
       </Modal>

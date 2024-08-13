@@ -5,7 +5,6 @@
   justify-content: center;
   align-items: center;
   height: auto;
-  margin-top: 3rem !important;
 }
 
 .grid-container .grid-card {
@@ -18,6 +17,9 @@
   margin-bottom: 3rem;
   margin-right: auto;
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .grid-container .grid-card:hover {
@@ -49,7 +51,6 @@
 
 .grid-container .grid-card .grid-card-btn {
   background-color: var(--bg-button-color);
-
   width: 100%;
   font-size: 1rem;
   font-weight: bold;

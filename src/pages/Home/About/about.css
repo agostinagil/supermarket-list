@@ -1,0 +1,31 @@
+.MuiContainer-root.aboutSection {
+  min-height: calc(100vh + 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.aboutSection > h2 {
+  margin-bottom: 2rem;
+  font-size: 40px;
+  font-weight: 800;
+  background: -webkit-linear-gradient(#3e67b8, #34c59c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.aboutSection > .aboutText {
+  margin-bottom: 1rem;
+  font-size: 16px;
+  color: #434f69;
+  font-weight: bold;
+}
+
+.aboutSection > .aboutClose {
+  color: #48917c;
+  font-size: 18px;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}

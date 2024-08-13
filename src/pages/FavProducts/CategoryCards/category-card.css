@@ -8,7 +8,10 @@
   min-height: 20rem;
   height: auto;
   width: 20rem;
-  box-shadow: 4px 4px 1px -1px rgba(182, 182, 182, 0.2);
+  box-shadow: 2px 2px 1px -1px rgba(78, 146, 220, 0.2),
+    2px -2px 1px -1px rgba(78, 146, 220, 0.2),
+    -2px 2px 1px -1px rgba(78, 146, 220, 0.2);
+
   border-radius: 6px;
   background-color: var(--smoke-color);
   padding: 2rem;

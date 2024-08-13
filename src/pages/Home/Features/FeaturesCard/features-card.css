@@ -1,0 +1,63 @@
+@import url("../../../../App.css");
+
+.MuiGrid-root.featuresGrid {
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.MuiPaper-root.featuresCard {
+  /* box-shadow: none; */
+  box-shadow: 0px 3px 2px -2px rgba(81, 135, 222, 0.343),
+    0px 2px 2px 0px rgba(26, 231, 91, 0.25),
+    0px 2px 4px 0px rgba(64, 27, 251, 0.274);
+  transition: none;
+  border-radius: 2px;
+  color: var(--text-black-color);
+  margin: 0 1rem 5rem 1rem;
+  border-radius: 6px;
+  min-width: 12rem;
+  max-width: 18rem;
+  min-height: 18rem;
+  max-height: 18rem;
+}
+
+.featuresCardHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.featuresCardHeader > .featuresCardAvatar {
+  background: radial-gradient(
+    circle,
+    rgba(170, 226, 155, 1) 0%,
+    rgba(107, 207, 191, 1) 30%,
+    rgba(127, 164, 246, 1) 90%
+  );
+  color: transparent;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+}
+
+.featuresCardHeader > .featuresCardTitle {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.featuresCardDescription {
+  text-align: center;
+  padding: 1rem 0.5rem 0 0.5rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .MuiPaper-root.featuresCard {
+    width: 20rem;
+    height: 22rem;
+  }
+}

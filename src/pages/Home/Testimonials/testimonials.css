@@ -1,0 +1,25 @@
+@import url("../../../App.css");
+
+.testimonialsSection {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--smoke-color);
+}
+
+.testimonialsSection > h2 {
+  margin-bottom: 1rem;
+  font-size: 26px;
+  color: var(--title-black-color);
+}
+
+.testimonialsBox {
+  border-radius: 10px;
+  min-width: 240px;
+  max-width: 1200px;
+  padding: 2rem;
+  width: 100%;
+}

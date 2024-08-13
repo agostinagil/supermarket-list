@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 import { Dropdown } from "@mui/base/Dropdown";
 import { Menu } from "@mui/base/Menu";
 import { MenuButton } from "@mui/base/MenuButton";
@@ -8,14 +8,18 @@ import { Button, useMediaQuery } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
-import { useAuth } from "../../../contexts/AuthContext";
 import "./dropdown.css";
+import { NavLink } from "react-router-dom";
 
-const DropdownNav = () => {
+const DropdownNav = ({ links, button, actionButton }) => {
   const [isOpen, setIsOpen] = useState(true);
-  const { logout } = useAuth();
 
   const handleMenu = () => setIsOpen(!isOpen);
+
+  const handleButtonClick = () => {
+    actionButton();
+    handleMenu();
+  };
 
   const isDesktop = useMediaQuery("(min-width:240px)");
 
@@ -31,25 +35,31 @@ const DropdownNav = () => {
         )}
       </MenuButton>
       <Menu className="menu-dropdown">
-        <MenuItem className="menu-dropdown-item">
-          <NavLink to="/dashboard" className="menu-dropdown-link">
-            Dashboard
-          </NavLink>
-        </MenuItem>
-        <MenuItem className="menu-dropdown-item">
-          <NavLink to="/fav-products" className="menu-dropdown-link">
-            Favorite Products
-          </NavLink>
-        </MenuItem>
-        <MenuItem className="menu-dropdown-item">
-          <NavLink to="/shopping-cart" className="menu-dropdown-link">
-            Shopping Cart
-          </NavLink>
-        </MenuItem>
+        {links.map((link) => (
+          <MenuItem key={link.title} className="menu-dropdown-item">
+            {link.isAnchor ? (
+              <a
+                href={link.path}
+                className="menu-dropdown-link"
+                onClick={handleMenu}
+              >
+                {link.title}
+              </a>
+            ) : (
+              <NavLink
+                to={link.path}
+                className="menu-dropdown-link"
+                onClick={handleMenu}
+              >
+                {link.title}
+              </NavLink>
+            )}
+          </MenuItem>
+        ))}
 
         <div className="menuD-btn">
-          <Button className="menu-dropdown-logout" onClick={logout}>
-            Logout
+          <Button className="menu-dropdown-logout" onClick={handleButtonClick}>
+            {button}
           </Button>
         </div>
       </Menu>

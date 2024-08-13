@@ -4,8 +4,8 @@
   font-family: inherit;
   line-height: 1.5;
   border-radius: 8px;
-  background-color: var(--primary-color);
-  color: var(--second-color);
+  background-color: transparent;
+  color: var(--bg-button-color);
   transition: all 150ms ease;
   cursor: pointer;
   border: 0.5px solid;
@@ -14,18 +14,18 @@
 }
 
 .base-MenuButton-root:hover {
-  background-color: var(--second-color);
-  color: var(--primary-color);
+  background-color: var(--bg-button-hover-color);
+  color: var(--smoke-color);
 }
 
 .base-Menu-root {
-  background-color: var(--second-color);
+  background-color: var(--drowpdown-bg-color);
   width: 100%;
   margin-top: 16px;
 }
 
 .base-Menu-root .base-Menu-listbox {
-  padding-left: 0;
+  padding-left: 1rem;
 }
 
 .base-Menu-root .base-MenuItem-root {
@@ -37,7 +37,7 @@
 
 .base-Menu-root .base-MenuItem-root:hover {
   width: 100%;
-  background-color: var(--smoke-color);
+  background-color: var(--dropdown-link-hover-color);
 }
 
 .menu-dropdown-link {
@@ -59,7 +59,7 @@
 
 .menuD-btn .menu-dropdown-logout {
   color: var(--smoke-color);
-  background-color: var(--bg-button-color);
+  border: 0.1rem solid var(--bg-button-color);
   margin-left: 1rem;
   margin-top: 0.5rem;
   padding: 0 1rem;
