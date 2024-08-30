@@ -10,14 +10,16 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import "./dropdown.css";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../../contexts/AuthContext";
 
-const DropdownNav = ({ links, button, actionButton }) => {
+const DropdownNav = ({ links, loginBtn, logout, actionButton, createAcc }) => {
   const [isOpen, setIsOpen] = useState(true);
+  const { isLoggedIn } = useAuth();
 
   const handleMenu = () => setIsOpen(!isOpen);
 
-  const handleButtonClick = () => {
-    actionButton();
+  const handleButtonClick = (e) => {
+    actionButton(e);
     handleMenu();
   };
 
@@ -34,7 +36,7 @@ const DropdownNav = ({ links, button, actionButton }) => {
           <CloseIcon className="menu-icon" fontSize={isFontSize} />
         )}
       </MenuButton>
-      <Menu className="menu-dropdown">
+      <Menu className="menu-dropdown" autoFocus={false}>
         {links.map((link) => (
           <MenuItem key={link.title} className="menu-dropdown-item">
             {link.isAnchor ? (
@@ -58,9 +60,31 @@ const DropdownNav = ({ links, button, actionButton }) => {
         ))}
 
         <div className="menuD-btn">
-          <Button className="menu-dropdown-logout" onClick={handleButtonClick}>
-            {button}
-          </Button>
+          {isLoggedIn() ? (
+            <Button
+              className="menu-dropdown-logout"
+              onClick={handleButtonClick}
+            >
+              {logout}
+            </Button>
+          ) : (
+            <>
+              <Button
+                className="menu-dropdown-logout"
+                onClick={handleButtonClick}
+                id={createAcc.toLowerCase().split(" ").join("")}
+              >
+                {createAcc}
+              </Button>
+              <Button
+                id={loginBtn.toLowerCase()}
+                className="menu-dropdown-logout"
+                onClick={handleButtonClick}
+              >
+                {loginBtn}
+              </Button>
+            </>
+          )}
         </div>
       </Menu>
     </Dropdown>

@@ -1,0 +1,43 @@
+@import url("../../../App.css");
+
+.form-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-register .inputs > * {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.form-register .MuiInputBase-root {
+  color: var(--text-black-color);
+}
+
+.form-register .form-btn {
+  background-color: var(--bg-button-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form-register .form-btn:hover {
+  background-color: var(--bg-button-hover-color);
+}
+
+.form-register .MuiInputBase-root {
+  border-bottom: 0.8px solid var(--grey-color);
+}
+
+.form-register .MuiInputBase-root::before {
+  border-bottom: none;
+}
+
+.form-register .MuiInputBase-root::after {
+  border-bottom: 1px solid var(--title-primary-color);
+}
+
+.registration {
+  color: var(--text-black-color);
+  font-size: 18px;
+}

@@ -14,28 +14,37 @@ import { useAuth } from "../../contexts/AuthContext";
 import "./navbar.css";
 import DropdownNav from "./Dropdown/Dropdown";
 import NavDesktop from "./NavDesktop/NavDesktop";
+import Register from "../Register/Register";
+
+const loggedInLinks = [
+  { title: "Dashboard", path: "/dashboard", isAnchor: false },
+  { title: "Favorite Products", path: "/fav-products", isAnchor: false },
+  { title: "Shopping List", path: "/shopping-cart", isAnchor: false },
+];
+
+const loggedOutLinks = [
+  { title: "About", path: "#about", isAnchor: true },
+  { title: "Features", path: "#features", isAnchor: true },
+  { title: "Testimonials", path: "#testimonials", isAnchor: true },
+];
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [openLogin, setOpenLogin] = useState(false);
+  const [openRegister, setOpenRegister] = useState(false);
 
   const { isLoggedIn, logout } = useAuth();
-
   const isDesktop = useMediaQuery("(min-width:900px)");
 
-  const loggedInLinks = [
-    { title: "Dashboard", path: "/dashboard", isAnchor: false },
-    { title: "Favorite Products", path: "/fav-products", isAnchor: false },
-    { title: "Shopping Cart", path: "/shopping-cart", isAnchor: false },
-  ];
+  const handleOpen = (e) => {
+    console.log(e);
+    if (e.target.id === "login") setOpenLogin(true);
 
-  const loggedOutLinks = [
-    { title: "About", path: "#about", isAnchor: true },
-    { title: "Features", path: "#features", isAnchor: true },
-    { title: "Testimonials", path: "#testimonials", isAnchor: true },
-  ];
+    if (e.target.id === "createaccount") setOpenRegister(true);
+  };
+  const handleClose = () => {
+    setOpenLogin(false);
+    setOpenRegister(false);
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }} className="box">
@@ -57,7 +66,7 @@ export default function Navbar() {
               {!isDesktop && (
                 <DropdownNav
                   links={loggedInLinks}
-                  button="Logout"
+                  logout="Logout"
                   actionButton={logout}
                 />
               )}
@@ -76,22 +85,35 @@ export default function Navbar() {
               {!isDesktop && (
                 <DropdownNav
                   links={loggedOutLinks}
-                  button="Login"
+                  loginBtn="Login"
                   actionButton={handleOpen}
+                  createAcc="Create Account"
                 />
               )}
               {isDesktop && (
                 <>
                   <NavDesktop links={loggedOutLinks} />
-                  <Button onClick={handleOpen} className="login-btn">
+                  <Button
+                    onClick={handleOpen}
+                    className="action-btn"
+                    id="login"
+                  >
                     Login
+                  </Button>
+                  <Button
+                    onClick={handleOpen}
+                    id="createaccount"
+                    className="action-btn"
+                  >
+                    Create account
                   </Button>
                 </>
               )}
             </>
           )}
         </Toolbar>
-        <LoginModal open={open} onClose={handleClose} />
+        <LoginModal open={openLogin} onClose={handleClose} />
+        <Register open={openRegister} onClose={handleClose} />
       </AppBar>
     </Box>
   );

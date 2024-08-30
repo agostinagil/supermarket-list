@@ -22,23 +22,25 @@ const CategoryCard = ({ category, groupedProducts }) => {
         <Card className="card-category">
           <Typography className="card-title-category">{category}</Typography>
           <Divider />
-          {groupedProducts[category].map((product, i) => (
-            <Box key={i} className="card-product-box">
-              <Typography className="card-products" key={i}>
-                {product}
+          {groupedProducts[category].map((product) => (
+            <Box key={product.id} className="card-product-box">
+              <Typography className="card-products" key={product.id}>
+                {product.product}
               </Typography>
               <Box className="card-product-actions">
-                {productIsInCart(product) && (
+                {productIsInCart(product.product) && (
                   <div className="tooltip">
                     <CheckIcon className="checked-icon" />
-                    <span className="tooltiptext">Added to cart</span>
+                    <span className="tooltiptext">
+                      Added to the shopping list
+                    </span>
                   </div>
                 )}
                 <div className="tooltip">
                   <ShoppingCartIcon
                     className="card-product-add-icon"
                     onClick={() => {
-                      addToCart({ product });
+                      addToCart({ product: product.product });
                     }}
                   />
 
@@ -49,7 +51,7 @@ const CategoryCard = ({ category, groupedProducts }) => {
                 <div className="tooltip">
                   <DeleteIcon
                     className="card-product-delete-icon"
-                    onClick={() => removeFavorite({ product, category })}
+                    onClick={() => removeFavorite(product.id)}
                   />
                   <span className="tooltiptext">Delete</span>
                 </div>

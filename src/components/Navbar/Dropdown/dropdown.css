@@ -18,10 +18,14 @@
   color: var(--smoke-color);
 }
 
-.base-Menu-root {
+.menu-dropdown.base-Menu-root {
   background-color: var(--drowpdown-bg-color);
   width: 100%;
   margin-top: 16px;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index: 1001;
 }
 
 .base-Menu-root .base-Menu-listbox {

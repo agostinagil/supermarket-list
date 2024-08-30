@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from "../actions/shoppingCart";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/shoppingCart";
 
 export const initialState = {
   nextPurchase: JSON.parse(localStorage.getItem("nextPurchase")) || [],
@@ -13,6 +13,14 @@ export const cartReducer = (state, action) => {
       return {
         ...state,
         nextPurchase: newCart,
+      };
+    }
+
+    case REMOVE_FROM_CART: {
+      localStorage.removeItem("nextPurchase");
+      return {
+        ...state,
+        nextPurchase: [],
       };
     }
 

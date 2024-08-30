@@ -12,20 +12,20 @@ export const FavProdsProvider = ({ children }) => {
   const products = state.favProducts;
 
   const groupedProducts = products.reduce((acc, product) => {
-    const { category, product: prodName } = product;
+    const { category } = product;
 
     if (!acc[category]) {
       acc[category] = [];
     }
 
-    acc[category].push(prodName);
+    acc[category].push(product);
 
     // acc[category].push(prodName);
     return acc;
   }, {});
 
-  const removeFavorite = ({ product, category }) => {
-    dispatch({ type: REMOVE_FAV, payload: { product, category } });
+  const removeFavorite = (id) => {
+    dispatch({ type: REMOVE_FAV, payload: { id } });
   };
 
   return (

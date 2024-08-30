@@ -38,7 +38,7 @@ const Cards = () => {
             className="grid-card-img"
           />
           <Typography variant="h5" component="div" className="grid-card-title">
-            My grocery list
+            My shopping list
           </Typography>
           <Typography variant="body2" className="grid-card-text">
             Here you can find the list for your next purchase

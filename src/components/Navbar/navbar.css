@@ -53,7 +53,15 @@
   margin-top: 0.2px;
 }
 
-.box .navbar .login-btn {
+.box .navbar .action-btn {
+  color: var(--smoke-color);
+}
+
+.base-Popup-root {
+  z-index: 999;
+}
+
+.navbar .MuiButtonBase-root {
   color: var(--smoke-color);
 }
 

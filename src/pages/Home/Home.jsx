@@ -5,12 +5,29 @@ import Testimonials from "./Testimonials/Testimonials";
 
 import "./Home.css";
 
+const sections = [
+  { id: "About", compt: About },
+  { id: "Features", compt: Features },
+  { id: "Testimonials", compt: Testimonials },
+];
+
 const Home = () => {
   return (
     <>
       <HeroImage />
 
-      <section id="about">
+      {sections.map((section) => {
+        const Comp = section.compt;
+        const sectionId = section.id.toLowerCase();
+
+        return (
+          <section key={sectionId} id={sectionId}>
+            <Comp />
+          </section>
+        );
+      })}
+
+      {/* <section id="about">
         <About />
       </section>
 
@@ -20,7 +37,7 @@ const Home = () => {
 
       <section id="testimonials">
         <Testimonials />
-      </section>
+      </section> */}
     </>
   );
 };

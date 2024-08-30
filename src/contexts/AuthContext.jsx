@@ -34,8 +34,14 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const login = ({ username, password }) => {
-    if (username === "admin" && password === "1234") {
+  const login = ({ email, password }) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) {
+      alert("User doesn't exists");
+      return null;
+    }
+
+    if (email === user.email && password === user.password) {
       const { jwt } = {
         ok: true,
         jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImFkbWluIiwiaWF0IjoxNTE2MjM5MDIyfQ.T26Dm4buOBRdxNs58srk1l_N5y1Dxii9y-YMj-9J7mM",

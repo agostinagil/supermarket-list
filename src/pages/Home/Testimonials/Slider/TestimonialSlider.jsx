@@ -10,7 +10,6 @@ import "./slider.css";
 
 const TestimonialSlider = ({ testimonials }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  console.log(currentIndex);
 
   const handleNext = () =>
     setCurrentIndex((prevIndex) =>

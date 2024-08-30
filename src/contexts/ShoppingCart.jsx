@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useReducer } from "react";
 import { cartReducer, initialState } from "../reducers/shoppingCart";
-import { ADD_TO_CART } from "../actions/shoppingCart";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/shoppingCart";
 
 export const ShoppingCartContext = createContext();
 
@@ -15,7 +15,15 @@ export const ShoppingCartProvider = ({ children }) => {
     dispatch({ type: ADD_TO_CART, payload: { product } });
   };
 
-  return <Provider value={{ state, addToCart }}>{children}</Provider>;
+  const removeFromCart = () => {
+    dispatch({ type: REMOVE_FROM_CART });
+  };
+
+  return (
+    <Provider value={{ state, addToCart, removeFromCart, dispatch }}>
+      {children}
+    </Provider>
+  );
 };
 
 export const useCart = () => {

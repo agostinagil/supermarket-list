@@ -2,31 +2,109 @@
 
 .shopping-cart-page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 80px;
 }
 
+.shopping-cart-page .shopping-top {
+  margin-top: 8rem;
+}
+
+.shopping-top .add-button {
+  cursor: pointer;
+  border-radius: 0.383rem;
+  padding: 0.4rem;
+  width: 10rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  border: 0.1rem solid var(--bg-button-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.shopping-top .add-button:hover {
+  background-color: var(--bg-button-hover-color);
+  color: var(--smoke-color);
+}
+
 .shopping-cart-page .shopping-card {
   /* width: 14rem; */
   max-width: 40rem;
-  flex: 1;
+  /* flex: 1; */
   height: auto;
   border-radius: 6px;
-  margin: 8rem 2rem;
+  margin: 2rem 2rem;
   box-shadow: 4px 4px 1px -1px rgba(182, 182, 182, 0.2);
   padding: 2.5rem;
   background-color: var(--smoke-color);
 }
 
+.shopping-card-top {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 .shopping-card .shopping-card-title {
+  width: 80%;
   font-size: 2.3rem;
   font-size: clamp(1.8rem, 2.5vw, 3rem);
   text-align: center;
   font-weight: bold;
   color: var(--title-primary-color);
-  margin-bottom: 1rem;
+
   cursor: default;
+}
+
+.shopping-delete {
+  color: var(--grey-color);
+}
+
+.shopping-delete:hover {
+  color: var(--warning-dark-color);
+}
+
+.shopping-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 70px;
+  font-size: 0.8rem;
+  background-color: var(--tooltip-bg-color);
+  color: var(--smoke-color);
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -35px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--tooltip-bg-color) transparent transparent transparent;
+}
+
+.shopping-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
 
 .shopping-item {
@@ -56,9 +134,9 @@
   color: var(--grey-color);
 }
 
-/* @media screen and (min-width: 380px) {
+@media screen and (min-width: 500px) {
   .shopping-cart-page .shopping-card {
-    width: 20rem;
+    width: 30rem;
   }
 }
 
@@ -66,4 +144,4 @@
   .shopping-cart-page .shopping-card {
     width: 40rem;
   }
-} */
+}

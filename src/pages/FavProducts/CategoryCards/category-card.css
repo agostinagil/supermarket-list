@@ -55,6 +55,7 @@
 
 .card-category .card-product-box .card-product-actions .checked-icon {
   color: var(--text-black-color);
+  cursor: default;
 }
 
 .card-category
